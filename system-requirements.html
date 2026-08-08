@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Can Your PC Run HLL: Vietnam? Official Specs + 30-Second Self-Check</title>
+<meta name="description" content="Official Hell Let Loose: Vietnam PC requirements plus a 30-second self-check tool, and why 50v50 servers hit your CPU harder than the spec sheet implies.">
+<link rel="canonical" href="https://hllvtools.com/system-requirements">
+<meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+<a class="logo" href="/">HLLV<b>TOOLS</b></a>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements" aria-current="page">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Field manual</p>
+<h1>Can your PC run it?</h1>
+<p class="lead">The official spec table hides its biggest caveat in the footnotes: <strong>both tiers target only 1080p / 60 fps, and both assume upscaling is on</strong>. Check your hardware against the two official anchors below — no third tier invented.</p>
+
+<div class="card">
+<h3 style="margin-top:0">30-second self-check</h3>
+<div class="calc-grid">
+<div><label for="gpu"><strong>Your GPU vs the official anchors</strong></label><br>
+<select id="gpu" style="width:100%">
+<option value="2">RTX 3060 Ti / RX 6900 XT class or faster</option>
+<option value="1" selected>Between the two (≥ RTX 2060 Super / RX 6600 XT, &lt; RTX 3060 Ti / RX 6900 XT)</option>
+<option value="0">Slower than RTX 2060 Super / RX 6600 XT</option>
+</select></div>
+<div><label for="cpu"><strong>Your CPU vs the official anchors</strong></label><br>
+<select id="cpu" style="width:100%">
+<option value="2">i5-12600K / Ryzen 5 7600X class or newer</option>
+<option value="1" selected>Between the two (≥ i5-10600K / Ryzen 5 3600X)</option>
+<option value="0">Older/slower than i5-10600K / Ryzen 5 3600X</option>
+</select></div>
+<div><label for="ram"><strong>RAM</strong></label><br>
+<select id="ram" style="width:100%">
+<option value="2">16 GB or more</option>
+<option value="0">Less than 16 GB</option>
+</select></div>
+<div style="align-self:end"><button class="go" id="chk" style="width:100%">Check</button></div>
+</div>
+<div id="vres" style="display:none;margin-top:12px;border-radius:8px;padding:12px 14px;border:1px solid var(--line)">
+<div class="res" id="vTitle" style="font-size:1.15rem"></div>
+<p id="vBody" style="margin-top:4px;font-size:.92rem"></p>
+</div>
+<p class="stamp">Verdicts only compare your picks against the two official tiers published on Steam — nothing is extrapolated. Also required either way: 64-bit Windows 10/11, DirectX 12, 30 GB storage, broadband (online-only game).</p>
+</div>
+
+<h2>The official table (Steam store page)</h2>
+<div class="tw"><table>
+<tr><th></th><th>Minimum</th><th>Recommended</th></tr>
+<tr><td>OS</td><td>Windows 10 64-bit</td><td>Windows 11 64-bit</td></tr>
+<tr><td>CPU</td><td>Intel i5-10600K / AMD Ryzen 5 3600X</td><td>Intel i5-12600K / AMD Ryzen 5 7600X</td></tr>
+<tr><td>RAM</td><td>16 GB</td><td>16 GB</td></tr>
+<tr><td>GPU</td><td>Nvidia RTX 2060 Super / AMD RX 6600 XT</td><td>Nvidia RTX 3060 Ti / AMD RX 6900 XT</td></tr>
+<tr><td>DirectX / Storage</td><td>12 / 30 GB</td><td>12 / 30 GB</td></tr>
+<tr><td>Official target</td><td>1080p/60 — TSR 71% or DLSS Ultra Performance</td><td>1080p/60 High — TSR 100% or DLSS Balanced</td></tr>
+</table></div>
+<p class="src">Copied verbatim from the <a href="https://store.steampowered.com/app/3079210/Hell_Let_Loose_Vietnam/" rel="nofollow">official Steam store page</a>, Aug 8, 2026.</p>
+
+<h2>What "minimum" really means</h2>
+<p>At minimum spec the 1080p/60 target assumes <strong>DLSS Ultra Performance</strong> — internally the game renders far below 1080p. Even the recommended tier promises 60 fps only at 1080p with upscaling. If you play at 1440p/4K or want high refresh, treat the recommended row as your floor, not your goal.</p>
+
+<h2>What the beta showed: 100-player servers hit the CPU</h2>
+<p>This is a UE5 game where a full server means 100 live humans plus helicopters, boats and tunnels — and the May open beta's <a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757691246/" rel="nofollow">performance megathread (102 replies)</a> ran well below what the spec table implies: an RTX 4060 Ti + i5-11600K reported ~60 fps on low in full servers, and a 3080 Ti + i7-12700K saw 55–70 fps on low with only 50–70% GPU usage — the classic signature of being CPU/engine-bound in mass fights. Press coverage echoed the <a href="https://www.gameshub.com/news/news/hell-let-loose-vietnam-open-beta-is-struggling-with-performance-issues-and-the-steam-community-is-vocal-about-it-2877288/" rel="nofollow">beta's performance complaints</a>. Two honest caveats: the devs said some beta video settings were bugged, and the beta also shipped a <a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757786409/" rel="nofollow">60 Hz refresh-rate lock in the config</a> that made everything feel worse than raw fps. The launch build (Aug 13) is the real test — we re-benchmark and update this page.</p>
+<p class="stamp">Last verified Aug 8, 2026 (specs from the live Steam page; performance notes are beta-era) · re-tested at launch.</p>
+</main>
+<footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. · <a href="/">Mortar calculator →</a></div></footer>
+<script>
+document.getElementById('chk').addEventListener('click',function(){
+var g=+document.getElementById('gpu').value,c=+document.getElementById('cpu').value,r=+document.getElementById('ram').value;
+var worst=Math.min(g,c,r);
+var names={0:'below the official minimum',1:'between minimum and recommended',2:'at or above recommended'};
+var weak=[];if(g===worst)weak.push('GPU');if(c===worst)weak.push('CPU');if(r===worst)weak.push('RAM');
+var box=document.getElementById('vres'),t=document.getElementById('vTitle'),b=document.getElementById('vBody');
+if(worst===2){box.style.borderColor='#7a9b4e';t.style.color='#7a9b4e';t.textContent='GREEN — meets the recommended spec';
+b.textContent='Official target at this tier: 1080p / 60 fps on the High preset with TSR 100% or DLSS Balanced. Higher resolutions or refresh rates are beyond what the official table promises.';}
+else if(worst===1){box.style.borderColor='#c8842e';t.style.color='#c8842e';t.textContent='YELLOW — clears minimum, short of recommended ('+weak.join(' + ')+')';
+b.textContent='Official minimum target: 1080p / 60 fps only with TSR at 71% or DLSS Ultra Performance — expect to lean hard on upscaling, especially on full 100-player servers.';}
+else{box.style.borderColor='#b5533c';t.style.color='#b5533c';t.textContent='RED — below the official minimum ('+weak.join(' + ')+')';
+b.textContent='Your '+weak.join(' and ')+' sits below the published minimum (RTX 2060 Super / RX 6600 XT, i5-10600K / Ryzen 5 3600X, 16 GB RAM). No official data supports acceptable performance under that line; if you buy anyway, Steam refunds cover under 2 hours played within 14 days.';}
+box.style.display='block';
+});
+</script>
+</body>
+</html>

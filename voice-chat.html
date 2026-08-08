@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HLL: Vietnam Voice Chat — Channels &amp; Muting Explained</title>
+<meta name="description" content="Voice chat in Hell Let Loose: Vietnam explained: proximity, unit and command channels, muting players, console voice, and the open-mic default.">
+<link rel="canonical" href="https://hllvtools.com/voice-chat">
+<meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+<a class="logo" href="/">HLLV<b>TOOLS</b></a>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat" aria-current="page">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Field manual</p>
+<h1>Voice chat, explained</h1>
+<p class="lead">Voice in the HLL series is routed by <strong>channel</strong>, not one big lobby: local proximity, your squad's radio, and a command net for leaders. That design is why the settings menu confuses everyone — and why "open mic" complaints dominated the beta.</p>
+
+<h2>The three channels</h2>
+<div class="tw"><table>
+<tr><th>Channel</th><th>Beta default (PC)</th><th>Who hears you</th></tr>
+<tr><td>Proximity (local)</td><td>V</td><td>Friendly players physically near you — enemies never hear you</td></tr>
+<tr><td>Squad / unit radio</td><td>C</td><td>Your ~6-player squad, anywhere on the map</td></tr>
+<tr><td>Command radio</td><td>X</td><td>Squad leaders + Commander only (leadership role required)</td></tr>
+</table></div>
+<p>An on-screen indicator lights up per channel when someone transmits, with your own name shown while you broadcast (<a href="https://hllvn.com/guides/voice-chat-push-to-talk/" rel="nofollow">beta-era community documentation</a>). This channel structure is carried over from the original HLL (<a href="https://progameguides.com/hell-let-loose/how-to-talk-in-hell-let-loose-xbox-pc-ps5-voice-chat/" rel="nofollow">HLL1 reference</a>); exact Vietnam launch defaults get re-verified Aug 13.</p>
+
+<h2>Muting people &amp; killing the open mic</h2>
+<ul>
+<li><strong>Mute one player:</strong> in the original HLL you open the scoreboard (Tab) and click the mute icon by their name — it silences voice <em>and</em> text. <span class="badge">HLL1 mechanic — confirming at launch</span></li>
+<li><strong>Turn a whole channel down:</strong> the series exposes separate volume sliders per chat type in Settings → Audio, so you can lower proximity without touching squad radio. <span class="badge">HLL1 mechanic — confirming at launch</span></li>
+<li><strong>Your own mic feels always-on?</strong> Two beta-confirmed causes: a stuck-transmit bug (a quick tap or overlapping keypress locks the channel open — clear it with a deliberate press-and-release), and controller <strong>Layout A</strong>, which uses voice activation instead of push-to-talk — switch to Layout C.</li>
+<li><strong>The transmit keybind is mislabeled.</strong> There is no setting called "push to talk" — it hides under Controls as <em>"Radio channel On/Off"</em>. Full walkthrough: <a href="/push-to-talk-not-working">push to talk "not working"</a>.</li>
+</ul>
+
+<h2>Console &amp; crossplay voice</h2>
+<p>On controller you hold <strong>LB</strong> and pick the channel with the right stick (beta behavior; LB was also the default transmit key in the <a href="https://steamcommunity.com/app/3079210/discussions/0/582803393301700821/" rel="nofollow">playtest PTT thread</a>). Cross-platform squads are supported, so squad radio works across PC, PS5 and Xbox on crossplay servers — details on <a href="/crossplay">the crossplay page</a>.</p>
+
+<h2>When voice just dies</h2>
+<p>The series runs voice through the third-party Vivox service, and most mid-match failures (a channel going silent, transmit keys ignoring you) are VOIP-connection drops, not keybinds. The beta-era fix order: <strong>Settings → Audio → VOIP Disconnect → Reconnect</strong>; if that hangs, leave the server and rejoin for a fresh handshake. The devs acknowledged VOIP-default complaints in the <a href="https://steamcommunity.com/app/3079210/eventcomments/582803393301660694/" rel="nofollow">official known-issues thread</a>, so expect launch-day changes here — we retest and update.</p>
+
+<p class="src">Sources: <a href="https://hllvn.com/guides/voice-chat-push-to-talk/" rel="nofollow">HLLVN voice guide (beta-era)</a> · <a href="https://steamcommunity.com/app/3079210/discussions/0/582803393301700821/" rel="nofollow">Steam "PUSH TO TALK" thread</a> · <a href="https://steamcommunity.com/app/3079210/eventcomments/582803393301660694/" rel="nofollow">official known-issues thread</a> · <a href="https://progameguides.com/hell-let-loose/how-to-talk-in-hell-let-loose-xbox-pc-ps5-voice-chat/" rel="nofollow">HLL1 voice reference</a></p>
+<p class="stamp">Last verified Aug 8, 2026 (beta/playtest-era info; HLL1-inherited items badged) · full re-check against the launch build on Aug 13.</p>
+</main>
+<footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. · <a href="/">Mortar calculator →</a></div></footer>
+</body>
+</html>

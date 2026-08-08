@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HLL: Vietnam Keybinds &amp; Settings Not Saving — Known Issue Tracker</title>
+<meta name="description" content="Keybinds and settings resetting in Hell Let Loose: Vietnam is a Team17-acknowledged bug. Live tracker, the config file truth, and community workarounds.">
+<link rel="canonical" href="https://hllvtools.com/keybinds-not-saving">
+<meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+<a class="logo" href="/">HLLV<b>TOOLS</b></a>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving" aria-current="page">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Field manual</p>
+<h1>Keybinds &amp; settings not saving <span class="badge">LIVE TRACKER</span></h1>
+<p class="lead"><strong>Status Aug 8 (pre-launch): confirmed bug in the beta and playtest builds, officially acknowledged by Team17 support — launch fix unknown.</strong> This is not your fault and mostly not fixable from your side; below is what's confirmed, the two workarounds with real evidence, and the retest promise.</p>
+
+<h2>What's confirmed broken</h2>
+<ul>
+<li><strong>Keybinds reset when you re-enter the in-game menu.</strong> <em>"You save it, go back in game, and it resets. Even deleting keybinds and getting back in game resets them back"</em> — <a href="https://steamcommunity.com/app/3079210/discussions/1/663863457493294269/" rel="nofollow">"Keybinds keep reseting" report thread</a>. One tester pinned the trigger precisely: binds reset "when exiting and entering the ingame menu", not when switching tabs (<a href="https://steamcommunity.com/app/3079210/discussions/0/663863457493542154/" rel="nofollow">early-testing feedback thread</a>).</li>
+<li><strong>Team17 knows.</strong> Official support reply, June 2: <em>"we've had the issue with keybinds not saving correctly reported to us already"</em> (<a href="https://steamcommunity.com/app/3079210/discussions/1/663863457493431758/" rel="nofollow">support thread</a>).</li>
+<li><strong>Still present in the July playtest build:</strong> mouse-wheel rebinds <a href="https://steamcommunity.com/app/3079210/discussions/1/590685327346192728/" rel="nofollow">wouldn't save on Jul 29</a>.</li>
+<li><strong>Non-QWERTY keyboards</strong> (AZERTY etc.) have an extra layer: binds display as the wrong keys and fail to save (<a href="https://steamcommunity.com/app/3079210/discussions/0/663863457493302577/" rel="nofollow">AZERTY thread</a>).</li>
+</ul>
+
+<h2>What actually helps (evidence-backed only)</h2>
+<ol>
+<li><strong>Rebind from the main menu, before joining a server.</strong> The observed reset trigger is the <em>in-game</em> settings menu; beta players kept binds longer doing everything from the title screen. Close and reopen settings once to confirm it stuck.</li>
+<li><strong>Check your config isn't read-only.</strong> The popular 60&nbsp;Hz-unlock fix tells you to set <code>GameUserSettings.ini</code> to read-only — which then silently blocks <em>every</em> settings save. Its own author warns: rebind first, set read-only last (<a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757786409/" rel="nofollow">performance thread</a>). If you applied that trick, untick read-only before blaming the game.</li>
+<li><strong>Don't hunt for a keybinds file to edit.</strong> The config folder is <code>%LOCALAPPDATA%\HLLVietnam\Saved\Config\Windows</code>, but it only holds <code>GameUserSettings.ini</code> (graphics/refresh). Testers found keybinds live in a non-editable <code>.sav</code> file — <em>"Game does not use the typical UE config structure"</em> — so HLL1-era advice about editing binds in the ini does not apply here.</li>
+<li><strong>Add your report</strong> to the <a href="https://steamcommunity.com/app/3079210/discussions/1/" rel="nofollow">Report a Problem forum</a> — support is actively collecting cases.</li>
+</ol>
+
+<h2>Timeline</h2>
+<div class="tw"><table>
+<tr><th>Date</th><th>Event</th></tr>
+<tr><td>May 29 – Jun 1</td><td>Open beta: multiple independent reset reports (keybinds + general settings)</td></tr>
+<tr><td>Jun 1 – 2</td><td>Team17 support acknowledges the issue, requests details</td></tr>
+<tr><td>Jul 29</td><td>Crossplay playtest build: rebinds still failing to save</td></tr>
+<tr><td><strong>Aug 13</strong></td><td><strong>Launch — we retest within hours and update this status line</strong></td></tr>
+</table></div>
+
+<div class="note">While you're in the settings menu anyway: the voice transmit bind is mislabeled as "Radio channel On/Off" — full story on the <a href="/push-to-talk-not-working">push-to-talk page</a>.</div>
+<p class="stamp">Last verified Aug 8, 2026 (all evidence beta/playtest-era) · next update: launch day, Aug 13.</p>
+</main>
+<footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. · <a href="/">Mortar calculator →</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hllvtools.com/sitemap.xml

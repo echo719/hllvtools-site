@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HLLV Mortar &amp; Artillery Calculator — Hell Let Loose: Vietnam</title>
+<meta name="description" content="Free mortar and artillery calculator for Hell Let Loose: Vietnam. Grid-to-grid range and azimuth instantly; elevation tables calibrated from launch day.">
+<link rel="canonical" href="https://hllvtools.com/">
+<meta property="og:title" content="HLLV Mortar & Artillery Calculator"><meta property="og:description" content="Grid distance + azimuth now, elevation tables calibrated from launch day. The HLL: Vietnam tool site.">
+<meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+<a class="logo" href="/">HLLV<b>TOOLS</b></a>
+<nav class="top"><a href="/" aria-current="page">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Fire mission · grid solver</p>
+<h1>Mortar &amp; artillery calculator</h1>
+<p class="lead">Two grid references in, distance and azimuth out. Built for the second screen — mobile-first, no account, works offline once loaded.</p>
+
+<div class="calc">
+<div class="calc-grid">
+<div class="fld"><label for="gFrom">Gun position</label><input id="gFrom" placeholder="E5-3-7" autocomplete="off" spellcheck="false" inputmode="text"></div>
+<div class="fld"><label for="gTo">Target grid</label><input id="gTo" placeholder="F7-1-5" autocomplete="off" spellcheck="false" inputmode="text"></div>
+</div>
+<div class="row">
+<button class="go" id="calcBtn">Compute</button>
+<label class="src" for="sq">Grid square <select id="sq"><option value="200" selected>200 m — HLL series standard</option><option value="100">100 m</option><option value="250">250 m</option></select></label>
+</div>
+<div class="readout" id="out" hidden>
+<div class="ro"><div class="k">Range</div><div class="v" id="dist">—</div></div>
+<div class="ro"><div class="k">Azimuth</div><div class="v" id="azi">—</div></div>
+<div class="ro wide"><div class="k">Elevation</div><div class="v" id="elev">—</div></div>
+</div>
+<p class="stamp">Keypads use the phone layout (1 = NW … 9 = SE). Square size defaults to the 200 m Hell Let Loose convention; Vietnam's exact grid gets verified at launch and updated here.</p>
+</div>
+
+<div class="note"><strong>Elevation tables: calibrating on launch day.</strong> Vietnam's mortar ballistics aren't publicly documented before release — any site showing elevation numbers today is guessing at them. From <strong>August 13</strong> we sample ranged shots per shell type in live matches, cross-check across sources, and publish the raw sample set alongside the table. <a href="#method">How we do it →</a></div>
+
+<h2 id="method">How the solver works</h2>
+<p>A grid reference resolves to a coordinate: the letter and number name the big square, then each keypad digit narrows it by a factor of three (200 m → 66.7 m → 22.2 m). Range is the straight-line distance between the two points. Azimuth is the bearing from gun to target, given in degrees and in NATO mils — 6,400 to a circle, the scale the Hell Let Loose series has always used for indirect fire.</p>
+<p>Once the tables land, the same input maps distance to an elevation setting per shell type, interpolating between calibrated sample points rather than a fitted curve we can't defend. Every table on this site ships with the sample count and the date it was measured.</p>
+
+<h2>The answers the wikis skipped</h2>
+<div class="cards">
+<a class="tile" href="/system-requirements"><span class="t">Can your PC run it?</span><span class="d">Official min/rec specs plus a 30-second self-check.</span></a>
+<a class="tile" href="/deluxe-edition-worth-it"><span class="t">Is Deluxe worth $20 more?</span><span class="d">Exactly what's inside — and what arrives months later.</span></a>
+<a class="tile" href="/single-player"><span class="t">Is there single-player?</span><span class="d">The honest answer before you spend $39.99.</span></a>
+<a class="tile" href="/crossplay"><span class="t">Crossplay, precisely</span><span class="d">Server platform filters, progression, unlock times by zone.</span></a>
+<a class="tile" href="/steam-deck"><span class="t">Steam Deck &amp; Linux</span><span class="d">Kernel-level EAC — what beta testing actually showed.</span></a>
+<a class="tile" href="/voice-chat"><span class="t">Voice chat explained</span><span class="d">Channels, muting, console voice, open-mic defaults.</span></a>
+<a class="tile" href="/push-to-talk-not-working"><span class="t">Push to talk "missing"</span><span class="d">The mislabeled setting that turns it back on.</span></a>
+<a class="tile" href="/keybinds-not-saving"><span class="t">Keybinds not saving</span><span class="d">Team17-acknowledged bug — live tracker and workaround.</span></a>
+<a class="tile" href="/motion-sickness"><span class="t">Motion sickness setup</span><span class="d">The four settings that actually reduce it.</span></a>
+<a class="tile" href="/helicopter-controls"><span class="t">Helicopter controls</span><span class="d">Keybinds, crew roles and the roll-sensitivity trap.</span></a>
+<a class="tile" href="/server-rental"><span class="t">Renting a server</span><span class="d">The six official partners and their real prices.</span></a>
+</div>
+
+<p class="src">Independent fan project — not affiliated with Team17 or Expression Games. Every factual claim carries a source link; pages state when they were last verified.</p>
+</main>
+<footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Hell Let Loose is a trademark of Team17. · <a href="/sitemap.xml">Sitemap</a></div></footer>
+<script>
+const KP=[[-1,1],[0,1],[1,1],[-1,0],[0,0],[1,0],[-1,-1],[0,-1],[1,-1]];
+function parseGrid(s){s=s.trim().toUpperCase().replace(/[^A-Z0-9]+/g,"-");const m=s.match(/^([A-Z])(10|[1-9])(?:-([1-9]))?(?:-([1-9]))?$/);if(!m)return null;
+const col=m[1].charCodeAt(0)-65,row=parseInt(m[2],10)-1;let x=col+0.5,y=row+0.5;
+if(m[3]){const k=KP[m[3]-1];x+=k[0]/3;y-=k[1]/3;if(m[4]){const k2=KP[m[4]-1];x+=k2[0]/9;y-=k2[1]/9;}}
+return{x,y};}
+function calc(a,b,sq){const dx=(b.x-a.x)*sq,dy=(a.y-b.y)*sq;const dist=Math.hypot(dx,dy);
+let deg=Math.atan2(dx,dy)*180/Math.PI;if(deg<0)deg+=360;const mils=deg*6400/360;return{dist,deg,mils};}
+const $=id=>document.getElementById(id);
+function run(){
+ const A=parseGrid($("gFrom").value),B=parseGrid($("gTo").value),out=$("out");
+ out.hidden=false;out.classList.remove("err");
+ if(!A||!B){$("dist").parentElement.parentElement.classList.add("err");
+  $("dist").textContent="—";$("azi").textContent="—";
+  $("elev").textContent="Check the grid format — e.g. E5-3-7";return;}
+ const sq=parseFloat($("sq").value),r=calc(A,B,sq);
+ $("dist").innerHTML=Math.round(r.dist)+' <small>m</small>';
+ $("azi").innerHTML=r.deg.toFixed(1)+'° <small>/ '+Math.round(r.mils)+' mils</small>';
+ $("elev").textContent="Calibrating on launch day — tables publish Aug 13";
+ if(window.gtag)gtag('event','calc_use');
+}
+$("calcBtn").addEventListener("click",run);
+["gFrom","gTo"].forEach(id=>$(id).addEventListener("keydown",e=>{if(e.key==="Enter")run();}));
+</script>
+</body>
+</html>

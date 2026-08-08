@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HLL: Vietnam Push to Talk Not Working — The Fix</title>
+<meta name="description" content="There is no setting called push to talk in Hell Let Loose: Vietnam. The transmit bind hides under Controls, and here is exactly where to find it.">
+<link rel="canonical" href="https://hllvtools.com/push-to-talk-not-working">
+<meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+<a class="logo" href="/">HLLV<b>TOOLS</b></a>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working" aria-current="page">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Field manual</p>
+<h1>Push to talk "not working" — here's the fix</h1>
+<p class="lead">You're not blind: there is no setting literally named "Push to Talk". Voice defaults to open/toggle transmission, and the binding you want is hiding under a different name.</p>
+
+<h2>The fix (as of the crossplay playtest build)</h2>
+<ol>
+<li>Open <strong>Settings → Controls</strong>.</li>
+<li>Find <strong>"Radio channel On/Off"</strong> — this is the voice transmit toggle. Rebind it to a comfortable key and use it as your PTT/mute switch. Community-confirmed in the <a href="https://steamcommunity.com/app/3079210/discussions/0/582803393301700821/" rel="nofollow">"PUSH TO TALK" Steam thread</a> ("the name is misleading, but it's there").</li>
+<li><strong>Controller:</strong> default transmit is <strong>LB / left bumper</strong> (Xbox layout).</li>
+</ol>
+
+<div class="note"><strong>Will a real PTT mode be added?</strong> The devs acknowledged the VOIP default complaints during the playtest known-issues follow-up, indicating the current behavior "won't stay like this" — see the <a href="https://steamcommunity.com/app/3079210/eventcomments/582803393301660694/" rel="nofollow">official known-issues thread</a> (50+ comments demanding PTT). We re-test the launch build Aug 13 and update this page.</div>
+
+<h2>Why it feels broken</h2>
+<p>The HLL series routes voice by channel (local / unit / command radio), so the binding is named after the radio channel, not "push to talk". If your mic seems always-hot in proximity chat, check the voice activation/toggle mode in Audio settings too — and expect polish here at launch, since it was one of the loudest playtest complaints (17+ separate threads).</p>
+<p class="stamp">Last verified Aug 8, 2026 (playtest-era info) · re-verified against the launch build on Aug 13.</p>
+</main>
+<footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. · <a href="/">Mortar calculator →</a></div></footer>
+</body>
+</html>
