@@ -1,0 +1,9 @@
+{
+ "schema_version": 1,
+ "generated_at_utc": "2026-08-10T00:00:00Z",
+ "grid_square_m": 200,
+ "grid_square_verified": false,
+ "status": "uncalibrated",
+ "method": "分段线性插值，不外推；同距离重复采样取平均。由 03-数据与标定/build_ballistics.py 从采样 CSV 生成，勿手改。",
+ "shells": []
+}
