@@ -1,9 +1,92 @@
 {
  "schema_version": 1,
- "generated_at_utc": "2026-08-10T00:00:00Z",
+ "generated_at_utc": "2026-08-14T04:32:13Z",
  "grid_square_m": 200,
  "grid_square_verified": false,
- "status": "uncalibrated",
- "method": "分段线性插值，不外推；同距离重复采样取平均。由 03-数据与标定/build_ballistics.py 从采样 CSV 生成，勿手改。",
- "shells": []
+ "status": "calibrated",
+ "method": "分段线性插值，不外推；同距离重复采样取平均",
+ "shells": [
+  {
+   "key": "us_mortar",
+   "label": "US Mortar — in-game tutorial reference (beta build)",
+   "status": "calibrated",
+   "sample_count": 15,
+   "range_m": [
+    100.0,
+    450.0
+   ],
+   "source_types": [
+    "dev_official"
+   ],
+   "source_urls": [
+    "https://www.youtube.com/watch?v=ArSbkeXRVIc&t=2158s"
+   ],
+   "measured_dates": [
+    "2026-05-30"
+   ],
+   "loo_max_error_mil": 0.5,
+   "samples": [
+    [
+     100.0,
+     85.0
+    ],
+    [
+     125.0,
+     79.0
+    ],
+    [
+     150.0,
+     73.0
+    ],
+    [
+     175.0,
+     67.0
+    ],
+    [
+     200.0,
+     61.0
+    ],
+    [
+     225.0,
+     55.0
+    ],
+    [
+     250.0,
+     49.0
+    ],
+    [
+     275.0,
+     43.0
+    ],
+    [
+     300.0,
+     36.0
+    ],
+    [
+     325.0,
+     30.0
+    ],
+    [
+     350.0,
+     24.0
+    ],
+    [
+     375.0,
+     18.0
+    ],
+    [
+     400.0,
+     12.0
+    ],
+    [
+     425.0,
+     6.0
+    ],
+    [
+     450.0,
+     0.0
+    ]
+   ]
+  }
+ ]
 }

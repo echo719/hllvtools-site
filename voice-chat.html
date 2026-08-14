@@ -14,7 +14,7 @@
 <body>
 <header class="site"><div class="wrap bar">
 <a class="logo" href="/">HLLV<b>TOOLS</b></a>
-<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat" aria-current="page">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat" aria-current="page">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a><a href="/server-status">Server status</a></nav>
 </div></header>
 <main class="wrap">
 <p class="eyebrow">Field manual</p>
@@ -42,10 +42,18 @@
 <p>On controller you hold <strong>LB</strong> and pick the channel with the right stick (beta behavior; LB was also the default transmit key in the <a href="https://steamcommunity.com/app/3079210/discussions/0/582803393301700821/" rel="nofollow">playtest PTT thread</a>). Cross-platform squads are supported, so squad radio works across PC, PS5 and Xbox on crossplay servers — details on <a href="/crossplay">the crossplay page</a>.</p>
 
 <h2>When voice just dies</h2>
-<p>The series runs voice through the third-party Vivox service, and most mid-match failures (a channel going silent, transmit keys ignoring you) are VOIP-connection drops, not keybinds. The beta-era fix order: <strong>Settings → Audio → VOIP Disconnect → Reconnect</strong>; if that hangs, leave the server and rejoin for a fresh handshake. The devs acknowledged VOIP-default complaints in the <a href="https://steamcommunity.com/app/3079210/eventcomments/582803393301660694/" rel="nofollow">official known-issues thread</a>, so expect launch-day changes here — we retest and update.</p>
+<p>The series runs voice through the third-party Vivox service, and most mid-match failures (a channel going silent, transmit keys ignoring you) are VOIP-connection drops, not keybinds. The beta-era fix order: <strong>Settings → Audio → VOIP Disconnect → Reconnect</strong>; if that hangs, leave the server and rejoin for a fresh handshake.</p>
 
-<p class="src">Sources: <a href="https://hllvn.com/guides/voice-chat-push-to-talk/" rel="nofollow">HLLVN voice guide (beta-era)</a> · <a href="https://steamcommunity.com/app/3079210/discussions/0/582803393301700821/" rel="nofollow">Steam "PUSH TO TALK" thread</a> · <a href="https://steamcommunity.com/app/3079210/eventcomments/582803393301660694/" rel="nofollow">official known-issues thread</a> · <a href="https://progameguides.com/hell-let-loose/how-to-talk-in-hell-let-loose-xbox-pc-ps5-voice-chat/" rel="nofollow">HLL1 voice reference</a></p>
-<p class="stamp">Last verified Aug 8, 2026 (beta/playtest-era info; HLL1-inherited items badged) · full re-check against the launch build on Aug 13.</p>
+<div class="note"><strong>Team17-confirmed launch bugs (official, Aug 12–14 blog posts):</strong>
+<ul style="margin-top:6px">
+<li><strong>Proximity chat distortion.</strong> Voices over proximity chat can sound distorted/robotic. Team17 says this is already <strong>resolved in Squad and Leadership chat</strong>; it can still happen in proximity chat, and they're working with their VOIP partner on a fix.</li>
+<li><strong>Tunnels break the speaker indicator.</strong> While travelling through a tunnel, you may not be able to see who's speaking in any VOIP channel — including yourself.</li>
+<li><strong>Squad Leader leaving kills proximity for the unit.</strong> If your Squad Leader leaves the unit, the rest of the squad stops being heard in proximity chat by other players.</li>
+</ul>
+This matches the intermittent voice failures the community was independently reporting on Steam and Reddit (see the <a href="/push-to-talk-not-working">PTT page</a>) — now with an official cause and a fix in progress rather than a mystery.</div>
+
+<p class="src">Sources: <a href="https://hllvn.com/guides/voice-chat-push-to-talk/" rel="nofollow">HLLVN voice guide (beta-era)</a> · <a href="https://steamcommunity.com/app/3079210/discussions/0/582803393301700821/" rel="nofollow">Steam "PUSH TO TALK" thread</a> · <a href="https://www.hellletloose.com/blog/5-before-launch" rel="nofollow">official "Known Issues, Launch Time & More" blog (Aug 12)</a> · <a href="https://www.hellletloose.com/blog/hllv-important-launch-info" rel="nofollow">official "Important Launch Info" blog (Aug 14)</a> · <a href="https://progameguides.com/hell-let-loose/how-to-talk-in-hell-let-loose-xbox-pc-ps5-voice-chat/" rel="nofollow">HLL1 voice reference</a></p>
+<p class="stamp">Last verified Aug 14, 2026 ~04:30 UTC — channel/mute mechanics still beta-era (HLL1-inherited items badged); known-bug list now sourced from Team17's official launch blogs.</p>
 </main>
 <footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. · <a href="/">Mortar calculator →</a></div></footer>
 </body>

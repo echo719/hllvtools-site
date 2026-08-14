@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HLLV Mortar &amp; Artillery Calculator — Hell Let Loose: Vietnam</title>
-<meta name="description" content="Free mortar and artillery calculator for Hell Let Loose: Vietnam. Grid-to-grid range and azimuth instantly; elevation tables calibrated from launch day.">
+<meta name="description" content="Free mortar and artillery calculator for Hell Let Loose: Vietnam. Grid-to-grid range and azimuth instantly; US mortar elevation sourced from the game's own chart.">
 <link rel="canonical" href="https://hllvtools.com/">
-<meta property="og:title" content="HLLV Mortar & Artillery Calculator"><meta property="og:description" content="Grid distance + azimuth now, elevation tables calibrated from launch day. The HLL: Vietnam tool site.">
+<meta property="og:title" content="HLLV Mortar & Artillery Calculator"><meta property="og:description" content="Grid distance + azimuth now, elevation table sourced straight from the game's own tutorial chart. The HLL: Vietnam tool site.">
 <meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
 <meta name="msvalidate.01" content="6922466428748883303028822D98ADB17" />
 <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
 <body>
 <header class="site"><div class="wrap bar">
 <a class="logo" href="/">HLLV<b>TOOLS</b></a>
-<nav class="top"><a href="/" aria-current="page">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+<nav class="top"><a href="/" aria-current="page">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a><a href="/server-status">Server status</a></nav>
 </div></header>
 <main class="wrap">
 <p class="eyebrow">Fire mission · grid solver</p>
@@ -42,11 +42,11 @@
 <p class="stamp">Keypads use the phone layout (1 = NW … 9 = SE). Square size defaults to the 200 m Hell Let Loose convention; Vietnam's exact grid gets verified at launch and updated here.</p>
 </div>
 
-<div class="note"><strong>Elevation tables: calibrating now.</strong> Vietnam's mortar ballistics weren't publicly documented before release — any site showing elevation numbers without sources is guessing at them. Since the <strong>August 13</strong> launch we collect ranged-shot samples per shell type from the community, cross-check them across independent sources, and publish the raw sample set alongside the table. <strong>Played mortar? <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2G7h0Gl9RJ2ZuUYbs4qU_Ut5xyfkWdvJmdkQqnAzHvJ9m0w/viewform" rel="nofollow noopener" target="_blank">Submit your range readings</a></strong> — shell, distance, mils and a screenshot are all it takes; every accepted sample is credited and published. <a href="#method">How we do it →</a></div>
+<div class="note"><strong>US mortar elevation: live, sourced from the game's own tutorial.</strong> Vietnam's mortar ballistics weren't publicly documented before release, so instead of guessing we read the numbers straight off the in-game elevation guide shown during Mortar Training — confirmed byte-identical across two independent video captures (different creators, May 29 &amp; 30). That table hasn't yet been independently reconfirmed against the live Aug 13 build — no community range data has surfaced since unlock — so treat it as a strong seed, not gospel, until it's cross-checked. NVA mortar is still <strong>uncalibrated</strong>. <strong>Played mortar? <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2G7h0Gl9RJ2ZuUYbs4qU_Ut5xyfkWdvJmdkQqnAzHvJ9m0w/viewform" rel="nofollow noopener" target="_blank">Submit your range readings</a></strong> — shell, distance, elevation and a screenshot are all it takes; every accepted sample is credited and published. <a href="#method">How we do it →</a></div>
 
 <h2 id="method">How the solver works</h2>
 <p>A grid reference resolves to a coordinate: the letter and number name the big square, then each keypad digit narrows it by a factor of three (200 m → 66.7 m → 22.2 m). Range is the straight-line distance between the two points. Azimuth is the bearing from gun to target, given in degrees and in NATO mils — 6,400 to a circle, the scale the Hell Let Loose series has always used for indirect fire.</p>
-<p>Once the tables land, the same input maps distance to an elevation setting per shell type, interpolating between calibrated sample points rather than a fitted curve we can't defend. Every table on this site ships with the sample count and the date it was measured.</p>
+<p>Once a shell's table is live, the same input maps distance to an elevation setting in degrees (the unit the game's own HUD uses — not mils), interpolating between calibrated sample points rather than a fitted curve we can't defend. Every table on this site ships with the sample count, source, and the date it was measured.</p>
 
 <h2>The answers the wikis skipped</h2>
 <div class="cards">
@@ -61,6 +61,7 @@
 <a class="tile" href="/motion-sickness"><span class="t">Motion sickness setup</span><span class="d">The four settings that actually reduce it.</span></a>
 <a class="tile" href="/helicopter-controls"><span class="t">Helicopter controls</span><span class="d">Keybinds, crew roles and the roll-sensitivity trap.</span></a>
 <a class="tile" href="/server-rental"><span class="t">Renting a server</span><span class="d">The six official partners and their real prices.</span></a>
+<a class="tile" href="/server-status"><span class="t">Is it down or is it me?</span><span class="d">Official launch-capacity notes and the VIP-error bug, decoded.</span></a>
 </div>
 
 <p class="src">Independent fan project — not affiliated with Team17 or Expression Games. Every factual claim carries a source link; pages state when they were last verified.</p>
@@ -118,7 +119,7 @@ function run(){
   if(mil===null){
    $("elev").innerHTML='Out of calibrated range <small>('+Math.round(sh.range_m[0])+'–'+Math.round(sh.range_m[1])+' m)</small>';
   }else{
-   $("elev").innerHTML=Math.round(mil)+' <small>mils</small>';
+   $("elev").innerHTML=(Math.round(mil*10)/10)+' <small>°</small>';
   }
   $("calStamp").textContent=sh.label+": "+sh.sample_count+" measured samples, "
    +Math.round(sh.range_m[0])+"–"+Math.round(sh.range_m[1])+" m, calibrated "

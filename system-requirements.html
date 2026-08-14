@@ -14,7 +14,7 @@
 <body>
 <header class="site"><div class="wrap bar">
 <a class="logo" href="/">HLLV<b>TOOLS</b></a>
-<nav class="top"><a href="/">Calculator</a><a href="/system-requirements" aria-current="page">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a></nav>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements" aria-current="page">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a><a href="/server-status">Server status</a></nav>
 </div></header>
 <main class="wrap">
 <p class="eyebrow">Field manual</p>
@@ -66,8 +66,19 @@
 <p>At minimum spec the 1080p/60 target assumes <strong>DLSS Ultra Performance</strong> — internally the game renders far below 1080p. Even the recommended tier promises 60 fps only at 1080p with upscaling. If you play at 1440p/4K or want high refresh, treat the recommended row as your floor, not your goal.</p>
 
 <h2>What the beta showed: 100-player servers hit the CPU</h2>
-<p>This is a UE5 game where a full server means 100 live humans plus helicopters, boats and tunnels — and the May open beta's <a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757691246/" rel="nofollow">performance megathread (102 replies)</a> ran well below what the spec table implies: an RTX 4060 Ti + i5-11600K reported ~60 fps on low in full servers, and a 3080 Ti + i7-12700K saw 55–70 fps on low with only 50–70% GPU usage — the classic signature of being CPU/engine-bound in mass fights. Press coverage echoed the <a href="https://www.gameshub.com/news/news/hell-let-loose-vietnam-open-beta-is-struggling-with-performance-issues-and-the-steam-community-is-vocal-about-it-2877288/" rel="nofollow">beta's performance complaints</a>. Two honest caveats: the devs said some beta video settings were bugged, and the beta also shipped a <a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757786409/" rel="nofollow">60 Hz refresh-rate lock in the config</a> that made everything feel worse than raw fps. The launch build (Aug 13) is the real test — we re-benchmark and update this page.</p>
-<p class="stamp">Last verified Aug 8, 2026 (specs from the live Steam page; performance notes are beta-era) · re-tested at launch.</p>
+<p>This is a UE5 game where a full server means 100 live humans plus helicopters, boats and tunnels — and the May open beta's <a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757691246/" rel="nofollow">performance megathread (102 replies)</a> ran well below what the spec table implies: an RTX 4060 Ti + i5-11600K reported ~60 fps on low in full servers, and a 3080 Ti + i7-12700K saw 55–70 fps on low with only 50–70% GPU usage — the classic signature of being CPU/engine-bound in mass fights. Press coverage echoed the <a href="https://www.gameshub.com/news/news/hell-let-loose-vietnam-open-beta-is-struggling-with-performance-issues-and-the-steam-community-is-vocal-about-it-2877288/" rel="nofollow">beta's performance complaints</a>. Two honest caveats: the devs said some beta video settings were bugged, and the beta also shipped a <a href="https://steamcommunity.com/app/3079210/discussions/0/663863113757786409/" rel="nofollow">60 Hz refresh-rate lock in the config</a> that made everything feel worse than raw fps. Team17's own pre-launch blog says over 300 bugs were fixed and performance/stability improved across the board since that beta.</p>
+
+<div class="note"><strong>Official launch-week performance notes (Team17 blogs, Aug 12 &amp; 14):</strong>
+<ul style="margin-top:6px">
+<li><strong>AMD GPU instability</strong> is a known issue at launch (driver-related). Temporary workarounds Team17 suggests: add <code>-dx12 -USEALLAVAILABLECORES -malloc=system</code> to your Steam launch options (or <code>-dx11 -USEALLAVAILABLECORES -malloc=system</code> if that doesn't help), set in-game graphics to High, and disable the in-game overlay in AMD Software: Adrenalin Edition.</li>
+<li><strong>FSR is not available at launch.</strong> FSR 4.1 is implemented but still being tested; it's coming in a future update.</li>
+<li><strong>The dedicated NVIDIA Game Ready Driver was delayed</strong> at NVIDIA's end — expected "early next week" as of Aug 14. Use your latest existing driver in the meantime.</li>
+<li>If you played the Crossplay Playtest on PC, Team17 recommends resetting your video settings to default so they recalibrate correctly for the launch build.</li>
+</ul>
+</div>
+
+<p class="src">Sources: <a href="https://store.steampowered.com/app/3079210/Hell_Let_Loose_Vietnam/" rel="nofollow">official Steam store page</a> · <a href="https://www.hellletloose.com/blog/5-before-launch" rel="nofollow">official "Known Issues, Launch Time & More" blog (Aug 12)</a> · <a href="https://www.hellletloose.com/blog/hllv-important-launch-info" rel="nofollow">official "Important Launch Info" blog (Aug 14)</a></p>
+<p class="stamp">Last verified Aug 14, 2026 ~04:30 UTC — spec table from Steam (Aug 8); AMD/FSR/NVIDIA notes are official launch-week updates; beta performance benchmarks not yet retested on the live build.</p>
 </main>
 <footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. · <a href="/">Mortar calculator →</a></div></footer>
 <script>
