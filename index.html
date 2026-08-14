@@ -111,7 +111,7 @@ function run(){
  $("azi").innerHTML=r.deg.toFixed(1)+'° <small>/ '+Math.round(r.mils)+' mils</small>';
  const sh=currentShell();
  if(!sh){
-  $("elev").textContent="Calibrating on launch day — tables publish Aug 13";
+  $("elev").textContent="Calibrating — collecting community range data since the Aug 13 launch";
   $("calStamp").hidden=true;
  }else{
   const mil=elevationFor(r.dist,sh.samples);
