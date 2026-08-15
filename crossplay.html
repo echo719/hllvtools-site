@@ -14,7 +14,7 @@
 <body>
 <header class="site"><div class="wrap bar">
 <a class="logo" href="/">HLLV<b>TOOLS</b></a>
-<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay" aria-current="page">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a><a href="/server-status">Server status</a></nav>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/player-count">Player count</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay" aria-current="page">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a><a href="/server-status">Server status</a></nav>
 </div></header>
 <main class="wrap">
 <p class="eyebrow">Field manual</p>
@@ -25,10 +25,22 @@
 <ul>
 <li>Official Dev Q&amp;A: <em>"Server owners will be able to configure which platforms can access their servers, including full crossplay, PC-only or console-only options."</em></li>
 <li>Servers are labelled in the browser (cross-platform / PC only / console only) and you can filter by them. Cross-platform squads are supported.</li>
-<li>There is no input-based matchmaking — the game uses a server browser. Platform isolation exists mainly for input fairness (mouse vs controller); consoles get aim assist.</li>
+<li>There is no input-based matchmaking — the game uses a server browser. Platform isolation exists mainly for input fairness (mouse/keyboard vs gamepad) — see the Aim Assist breakdown below.</li>
 <li>The July 24–27 crossplay playtest already ran Xbox-only, PS5-only and console-crossplay variants live.</li>
 <li>Last-gen (PS4 / Xbox One): not supported.</li>
 </ul>
+
+<h2>Aim Assist, officially explained</h2>
+<p>Team17's Aug 14 dev-comms post addressed the crossplay Aim Assist debate directly, since this is the launch's first crossplay entry for the franchise. Key points, straight from that post:</p>
+<ul>
+<li><strong>Available to any gamepad player, on PC or console</strong> — not console-exclusive. Mouse/keyboard players don't get it.</li>
+<li><strong>Same values as the original Hell Let Loose</strong> — this isn't a new system built for Vietnam.</li>
+<li>Four settings: <strong>High (default), Medium, Low, or Disabled</strong> — and PC gamepad users get the identical values console players do.</li>
+<li><strong>Only active while aiming down sights (ADS)</strong> — it does nothing from the hip.</li>
+<li><strong>No "snap-to" when you enter ADS</strong>, and it does not make your aim "stick" to or track a moving target.</li>
+<li>What it actually does: a subtle slowdown of your aim's input speed when it's already moving toward an enemy, to help stick-aiming land shots — the effect is limited at range and <strong>turns off entirely if the enemy is occluded</strong> (behind cover, foliage, etc).</li>
+</ul>
+<p>Team17 says they'll keep assessing balance as more players weigh in — this section will get updated if the values or behavior change.</p>
 
 <h2>Cross-progression: the honest matrix</h2>
 <div class="tw"><table>
@@ -49,8 +61,8 @@
 <tr><td>Asia/Oceania</td><td>12:00 AM CST · 1:00 AM JST/KST · 2:00 AM AET (Aug 14)</td></tr>
 </table></div>
 
-<p class="src">Sources: <a href="https://low.ms/knowledgebase/hell-let-loose-vietnam-crossplay-platform-access" rel="nofollow">official Dev Q&amp;A #2 (via Low.ms)</a> · <a href="https://store.steampowered.com/app/3079210/Hell_Let_Loose_Vietnam/" rel="nofollow">Steam store page</a> · <a href="https://www.xbox.com/en-US/games/store/hell-let-loose-vietnam-deluxe-edition/9N245RLN56ZG" rel="nofollow">Xbox Store (Play Anywhere)</a> · <a href="https://store.playstation.com/en-us/product/EP4064-PPSA28869_00-HLLVDLX000000000" rel="nofollow">PS Store (unlock time)</a> · <a href="https://insider-gaming.com/hell-let-loose-vietnam-release-date-launch-times/" rel="nofollow">Insider Gaming (timezone table)</a></p>
-<p class="stamp">Last verified Aug 8, 2026. Re-verified at launch — anything the day-one build changes gets corrected here.</p>
+<p class="src">Sources: <a href="https://low.ms/knowledgebase/hell-let-loose-vietnam-crossplay-platform-access" rel="nofollow">official Dev Q&amp;A #2 (via Low.ms)</a> · <a href="https://store.steampowered.com/app/3079210/Hell_Let_Loose_Vietnam/" rel="nofollow">Steam store page</a> · <a href="https://www.xbox.com/en-US/games/store/hell-let-loose-vietnam-deluxe-edition/9N245RLN56ZG" rel="nofollow">Xbox Store (Play Anywhere)</a> · <a href="https://store.playstation.com/en-us/product/EP4064-PPSA28869_00-HLLVDLX000000000" rel="nofollow">PS Store (unlock time)</a> · <a href="https://insider-gaming.com/hell-let-loose-vietnam-release-date-launch-times/" rel="nofollow">Insider Gaming (timezone table)</a> · <a href="https://www.hellletloose.com/blog/hllv-launch-thread" rel="nofollow">official "Dev Comms Thread & Launch Updates" (live-updated thread, Aim Assist explainer, checked Aug 15)</a></p>
+<p class="stamp">Last verified Aug 15, 2026 ~08:20 UTC — unlock times/platform matrix from Aug 8, re-verified at launch; Aim Assist explainer re-checked against Team17's live dev-comms thread, unchanged since first added.</p>
 </main>
 <footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. Some links on this site are affiliate links — we may earn a commission at no extra cost to you. · <a href="/">Mortar calculator →</a></div></footer>
 </body>

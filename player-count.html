@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hell Let Loose: Vietnam Player Count — Live Numbers &amp; Charts</title>
+<meta name="description" content="No live Steam player-count widget exists for this game — CORS-blocked, confirmed. Here's the honest snapshot, server-size facts, and where to check live numbers.">
+<link rel="canonical" href="https://hllvtools.com/player-count">
+<meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY7H7WHS2Q"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-ZY7H7WHS2Q");</script>
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+<a class="logo" href="/">HLLV<b>TOOLS</b></a>
+<nav class="top"><a href="/">Calculator</a><a href="/system-requirements">Can it run?</a><a href="/player-count" aria-current="page">Player count</a><a href="/deluxe-edition-worth-it">Deluxe?</a><a href="/crossplay">Crossplay</a><a href="/single-player">Single-player?</a><a href="/steam-deck">Steam Deck</a><a href="/voice-chat">Voice chat</a><a href="/push-to-talk-not-working">PTT fix</a><a href="/keybinds-not-saving">Keybinds bug</a><a href="/motion-sickness">Motion sickness</a><a href="/helicopter-controls">Helicopters</a><a href="/server-rental">Servers</a><a href="/server-status">Server status</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Field manual</p>
+<h1>How many people are actually playing?</h1>
+<p class="lead">Team17 doesn't publish a player-count API, and we tested pulling Steam's numbers straight into this page ourselves — <strong>blocked by CORS, confirmed on launch day</strong>. So instead of faking a live widget, this page gives you the numbers that are actually true right now, plus the exact links to check the real live count yourself.</p>
+
+<div class="readout" style="margin-top:18px">
+<div class="ro"><div class="k">Battle size</div><div class="v">50<small> v 50</small></div></div>
+<div class="ro"><div class="k">Per full server</div><div class="v">100<small> players</small></div></div>
+<div class="ro"><div class="k">Roles</div><div class="v">17<small> across 6 units</small></div></div>
+<div class="ro"><div class="k">Maps at launch</div><div class="v">6<small> large-scale</small></div></div>
+</div>
+<p class="stamp">Battle size, role count and map count are copied from the official Steam store listing, not estimated.</p>
+
+<h2>Is there a live player-count number?</h2>
+<p>Not on this page, and not honestly anywhere third-party — Valve doesn't expose a public per-game concurrent-player API that a static site can call directly from the browser; we confirmed the direct fetch fails with a CORS error rather than pretend it works. The two places that actually track this live, straight from Steam's own data:</p>
+<ul>
+<li><strong><a href="https://steamcharts.com/app/3079210" rel="nofollow">SteamCharts</a></strong> — dedicated concurrent-player history and graph for Hell Let Loose: Vietnam specifically.</li>
+<li><strong><a href="https://store.steampowered.com/charts/mostplayed" rel="nofollow">Steam's own "Most Played" chart</a></strong> — Valve's official live ranking of the top 100 games by current players.</li>
+</ul>
+
+<h2>Where Vietnam stood at our last check</h2>
+<p>Snapshot only — treat this as "last time we looked," not live. Two checks so far, close enough together to show the trend rather than just one point in time:</p>
+<ul>
+<li><strong>Aug 14, 2026 ~20:15 UTC</strong> (≈28h post-launch): <strong>#1</strong> on Steam's live Top Sellers chart (by revenue), ahead of Marvel Rivals (#2) and Counter-Strike 2 (#3). On the Most Played chart (by concurrent players): <strong>#73</strong>, tagged "NEW," with <strong>22,741 concurrent players</strong> and a same-day peak of <strong>30,267</strong>.</li>
+<li><strong>Aug 15, 2026 ~08:20 UTC</strong> (≈40h post-launch): <strong>#2</strong> on Top Sellers — Counter-Strike 2 moved into #1, Vietnam still holds a top-3 spot. On Most Played, it had <strong>dropped out of the Top 100</strong> entirely. SteamCharts' own per-game page was returning a server error at check time, so we don't have an exact concurrent number for this snapshot — flagging the outage rather than guessing a figure.</li>
+<li>For scale, at the first check #1 on Most Played was Counter-Strike 2 at just over 1M concurrent. The closest 50v50-scale tactical-shooter comparison, Rising Storm 2: Vietnam, has averaged only ~320 concurrent players over the last 30 days on SteamCharts.</li>
+</ul>
+<p class="src">Sources: <a href="https://store.steampowered.com/charts/mostplayed" rel="nofollow">Steam Most Played chart</a> · <a href="https://store.steampowered.com/charts/topselling" rel="nofollow">Steam Top Sellers chart</a> · <a href="https://steamcharts.com/app/418460" rel="nofollow">SteamCharts (Rising Storm 2: Vietnam)</a> — checked live via browser at both timestamps above.</p>
+
+<h2>How big was the launch-day spike?</h2>
+<p>Team17's own words, from their Aug 14 launch-day blog: <em>"We've already seen almost three times the number of concurrent players compared to Hell Let Loose's all-time peak."</em> That's an official comparison, not a number — but independent tracking reported by TechTimes (citing ThePCEnthusiast) put Aug 13 launch-day concurrent Steam players <strong>above 30,000</strong>, alongside beta context of 352,000 peak participants and a beta daily-active-user high of 184,000.</p>
+<p class="src">Sources: <a href="https://www.hellletloose.com/blog/hllv-important-launch-info" rel="nofollow">official "Important Launch Info" blog (Aug 14)</a> · <a href="https://www.techtimes.com/articles/324458/20260814/hell-let-loose-vietnam-live-steam-players-are-divided-launch-quality.htm" rel="nofollow">TechTimes launch-quality report (Aug 14)</a></p>
+
+<h2>Squad &amp; server size, explained</h2>
+<div class="tw"><table>
+<tr><th>Unit</th><th>Size</th></tr>
+<tr><td>Squad</td><td>~6 players <span class="badge">community-sourced</span></td></tr>
+<tr><td>Team (one faction)</td><td>50 players, "made up of multiple squads" <span class="badge">official</span></td></tr>
+<tr><td>Full server</td><td>100 players (50 US vs 50 NVA) <span class="badge">official</span></td></tr>
+<tr><td>Roles available</td><td>17, across Command / Infantry / Recon / Armour / Helicopter / Mortar Squad <span class="badge">official</span></td></tr>
+</table></div>
+<p>More on how squad, unit and command voice channels map to this structure on <a href="/voice-chat">the voice chat page</a>.</p>
+
+<h2>The other tool &amp; data pages</h2>
+<div class="cards">
+<a class="tile" href="/"><span class="t">Mortar &amp; artillery calculator</span><span class="d">Grid-to-grid range, azimuth and elevation.</span></a>
+<a class="tile" href="/system-requirements"><span class="t">Can your PC run it?</span><span class="d">Official specs plus a 30-second self-check.</span></a>
+<a class="tile" href="/server-status"><span class="t">Is it down or is it me?</span><span class="d">Official launch-capacity notes and the VIP-error bug.</span></a>
+</div>
+
+<p class="src">Sources: <a href="https://store.steampowered.com/app/3079210/Hell_Let_Loose_Vietnam/" rel="nofollow">official Steam store page</a> · <a href="https://www.hellletloose.com/blog/hllv-important-launch-info" rel="nofollow">official "Important Launch Info" blog (Aug 14)</a> · <a href="https://www.techtimes.com/articles/324458/20260814/hell-let-loose-vietnam-live-steam-players-are-divided-launch-quality.htm" rel="nofollow">TechTimes (Aug 14)</a> · <a href="https://steamcharts.com/app/3079210" rel="nofollow">SteamCharts</a></p>
+<p class="stamp">Last verified Aug 15, 2026 ~08:20 UTC — no live API exists client-side (CORS confirmed blocked), so standing/ranking figures above are manually re-checked snapshots, not real-time; use the SteamCharts and Steam Most Played links for the number right now.</p>
+</main>
+<footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. Some links on this site are affiliate links — we may earn a commission at no extra cost to you. · Tools: <a href="/">Mortar calculator</a> · <a href="/system-requirements">Can it run?</a> · <a href="/server-status">Server status</a></div></footer>
+</body>
+</html>
