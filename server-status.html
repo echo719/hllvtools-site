@@ -26,21 +26,30 @@
 <li><strong>Demand is real and high.</strong> Team17 reported almost three times the concurrent players compared to the original Hell Let Loose's all-time peak on launch day — servers are busy, not broken, for most players.</li>
 <li><strong>Additional official servers are being added across all regions</strong> in direct response to launch demand — Team17's Aug 14 update says this rollout is continuing into the weekend as more players join.</li>
 <li><strong>The Server Browser can show stale capacity.</strong> Because so many players are joining at once, a server can fill up between the Browser showing space and your connection completing.</li>
-<li><strong>A crash bug tied to RCON broadcast messages and NVA tunnels has been fixed</strong> — confirmed in the Aug 14 dev-comms post, shipping with Hotfix 1.</li>
+<li><strong>A crash bug tied to RCON broadcast messages and NVA tunnels has been fixed</strong> — first confirmed in the Aug 14 dev-comms post, and shipped live as part of Hotfix 1 on Aug 16.</li>
 </ul>
 
-<h2>Hotfix 1: server-browser changes confirmed for Aug 16</h2>
-<p>Team17 confirmed on Aug 15 that Hotfix 1 ships <strong>Aug 16, 2026 at 10:00 UTC</strong> (3am PDT / 6am EDT / 11am BST / 12pm CEST) — server owners can push the update up to 30 minutes early. As of this check it's <strong>not live yet</strong> — these are announced, not confirmed-shipped, changes:</p>
+<h2>Hotfix 1 is live (shipped Aug 16, 2026)</h2>
+<p>Team17 confirmed Hotfix 1 <strong>went live on all platforms Aug 16, 2026 at 10:00 UTC</strong> (3am PDT / 6am EDT / 11am BST / 12pm CEST). This is now a confirmed-shipped patch, not just an announced one — Team17's own "Hotfix 1 is live now" post lists:</p>
 <ul>
-<li>Server list will <strong>auto-refresh more frequently</strong> to better reflect actual open slots.</li>
-<li><strong>Full servers will be hidden by default</strong> in the server list (still findable by adjusting filters).</li>
-<li>The matchmaking algorithm will be updated to <strong>prioritise low-ping servers with 80 or fewer players</strong>, aimed at reducing the "shows open, fills before you connect" problem.</li>
-<li>General server stability fixes, plus continued rollout of additional official servers across all regions.</li>
+<li>Server list now <strong>auto-refreshes more frequently</strong> to better reflect actual open slots.</li>
+<li><strong>Full servers are now hidden by default</strong> in the server list (still findable by adjusting filters).</li>
+<li>The matchmaking algorithm now <strong>prioritises low-ping servers with 80 or fewer players</strong>, aimed at reducing the "shows open, fills before you connect" problem.</li>
+<li>Further AMD GPU stability fixes, further general server stability fixes, and continued rollout of additional official servers across all regions.</li>
 </ul>
-<p>We'll confirm against the live build once Hotfix 1 actually ships and update this page either way.</p>
+<p>Team17's own framing: Hotfix 1 is "only the first step," with more patches planned in the coming weeks for issues still under investigation (see <a href="/voice-chat">voice chat</a> and <a href="/system-requirements">system requirements</a> for what's still open).</p>
+
+<h2>New crash reports since Hotfix 1 — Team17 says they're investigating</h2>
+<p>Worth flagging clearly: <strong>a Team17 developer (G_Medlin) posted a pinned "Server Stability Update" on Aug 17</strong> stating, in full: <em>"Following Hotfix 1, we're aware of new server crash reports and are actively investigating."</em> (<a href="https://steamcommunity.com/app/3079210/discussions/0/631219394426479022/" rel="nofollow">official pinned thread</a>). That's an official acknowledgment that the stability picture changed after the hotfix — not a claim Hotfix 1 made things worse overall, but a signal that new, not-yet-identified crash patterns are being actively tracked. We'll follow this and update the moment there's a fix or more detail.</p>
 
 <h2>The "reserved for VIP players" error, explained</h2>
 <p>Some players trying to join Community Servers see an error claiming the remaining slots are reserved for VIP players. Team17's official line: this is <strong>usually not really a VIP restriction</strong> — in most reported cases the server had already filled up before the Browser refreshed, and the error message is misleading about why you were turned away. They're still investigating edge cases. If you hit this, it doesn't necessarily mean the server operator locked you out.</p>
+
+<h2>What players are describing: mid-match crashes wiping progress</h2>
+<p>The community reports behind the official acknowledgment above: some players describe servers crashing <strong>mid-match</strong> and ending the game outright, with that match's progress and XP lost — distinct from the already-fixed RCON-broadcast/NVA-tunnel crash bug (see above). <em>"You cant even finish matches without the risk of a server crashing by the end of it"</em>, one player wrote; a second player replying independently confirmed the same pattern: <em>"Just had 2 in a row. Both games lost loads of progression"</em> (<a href="https://steamcommunity.com/app/3079210/discussions/0/631219091886303674/" rel="nofollow">Aug 16 report thread</a>). Team17 hasn't named a specific cause yet — see the official update above for current status. There's currently no known way to recover progress lost to a crashed match.</p>
+
+<h2>Also watching: server browser showing very few or no servers (unconfirmed, Aug 17)</h2>
+<p>A fresh cluster of reports in the hour before this check: multiple players independently describing the server browser suddenly showing only one server, or none at all, even with filters reset — <em>"Last few hours I am only seeing one random server as joinable"</em>, one player wrote, with others replying <em>"Same here"</em>, plus a separate "No Servers Available" report posted independently in the bug-report forum (<a href="https://steamcommunity.com/app/3079210/discussions/0/631219394426506751/" rel="nofollow">General Discussions thread</a>). This is too fresh for Team17 to have commented on specifically, and we can't yet tell whether it's connected to Hotfix 1's server-browser filtering changes (above) or a separate, unrelated hiccup — flagging it rather than guessing at a cause. We'll check again next round.</p>
 
 <h2>Finding a server that actually has room</h2>
 <ol>
@@ -55,8 +64,8 @@
 <h2>Where to check yourself, live</h2>
 <p>For anything more real-time than this page: the <a href="https://steamcommunity.com/app/3079210/discussions/" rel="nofollow">Steam discussions board</a> and the official <a href="https://discord.com/invite/hellletloose" rel="nofollow">Hell Let Loose Discord</a> #tech-solutions channel are where outage reports surface first. If you want to report a bug yourself, Team17's Support Team takes reports via the Help Centre or a DM to the HLL Support bot on Discord.</p>
 
-<p class="src">Sources: <a href="https://www.hellletloose.com/blog/hllv-important-launch-info" rel="nofollow">official "Important Launch Info" blog (Aug 14)</a> · <a href="https://www.hellletloose.com/blog/5-before-launch" rel="nofollow">official "Known Issues, Launch Time & More" blog (Aug 12)</a> · <a href="https://www.hellletloose.com/blog/hllv-launch-thread" rel="nofollow">official "Dev Comms Thread & Launch Updates" (live-updated thread, checked Aug 16)</a></p>
-<p class="stamp">Last verified Aug 16, 2026 ~02:20 UTC — built entirely from Team17's official launch-week blog posts; no live status feed exists, so this page is periodically re-curated, not real-time. Re-confirmed against the thread's "15 August: 48-Hour Update" entry: Hotfix 1 ship time Aug 16 ~10:00 UTC still stands, not yet live as of this check.</p>
+<p class="src">Sources: <a href="https://www.hellletloose.com/blog/hllv-important-launch-info" rel="nofollow">official "Important Launch Info" blog (Aug 14)</a> · <a href="https://www.hellletloose.com/blog/5-before-launch" rel="nofollow">official "Known Issues, Launch Time & More" blog (Aug 12)</a> · <a href="https://www.hellletloose.com/blog/hllv-launch-thread" rel="nofollow">official "Dev Comms Thread & Launch Updates" (live-updated thread, checked Aug 17)</a> · <a href="https://steamcommunity.com/app/3079210/discussions/0/631219394426479022/" rel="nofollow">official "Server Stability Update" pinned thread (Aug 17)</a> · <a href="https://steamcommunity.com/app/3079210/discussions/0/631219091886303674/" rel="nofollow">community mid-match crash reports (Aug 16)</a> · <a href="https://steamcommunity.com/app/3079210/discussions/0/631219394426506751/" rel="nofollow">community server-browser reports (Aug 17)</a></p>
+<p class="stamp">Last verified Aug 17, 2026 ~01:20 UTC — Hotfix 1 confirmed live (shipped Aug 16, 10:00 UTC): server-browser changes, RCON/NVA-tunnel crash fix, AMD GPU stability and PS5 audio fixes are now shipped, not just announced. Added Team17's Aug 17 official acknowledgment of new post-Hotfix-1 crash reports (under investigation), plus a fresh, unconfirmed cluster of server-browser-visibility reports.</p>
 </main>
 <footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. Some links on this site are affiliate links — we may earn a commission at no extra cost to you. · Tools: <a href="/">Mortar calculator</a> · <a href="/system-requirements">Can it run?</a> · <a href="/player-count">Player count</a></div></footer>
 </body>
