@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HLL: Vietnam on Steam Deck &amp; Linux — EAC Status</title>
-<meta name="description" content="Does Hell Let Loose: Vietnam run on Steam Deck or Linux? Kernel-level EAC status, what the Proton beta showed, and a launch-day verdict.">
+<title>Hell Let Loose: Vietnam on Steam Deck &amp; Linux — Does It Run?</title>
+<meta name="description" content="Yes — Hell Let Loose: Vietnam runs on Steam Deck and Linux. ProtonDB Gold, EAC works under Proton. Performance caveats and the Linux Epic account-linking issue.">
 <link rel="canonical" href="https://hllvtools.com/steam-deck">
 <meta name="google-site-verification" content="VJwMElZWVZ_dJ9pi1q5w27rxylbcZfyAiV_04gShd_0">
 <link rel="stylesheet" href="style.css">
@@ -24,19 +24,24 @@
 <h2>What we actually know</h2>
 <ul>
 <li><strong>Deck hands-on, launch day:</strong> <a href="https://steamdeckhq.com/news/hell-let-loose-vietnam-works-on-steam-deck/" rel="nofollow">Steam Deck HQ</a> booted the shipped build, got through the tutorial and a full live match with no EAC block. Performance: even on lowest settings with TSR at 35%, framerate dropped below 30 while walking and hovered around 30 FPS overall — their verdict is "not a game to play on the deck" handheld-first, though they expect it to fare better on Steam Machine at 1080p or lower.</li>
-<li><strong>Independent corroboration:</strong> <a href="https://www.protondb.com/app/3079210" rel="nofollow">ProtonDB</a> rates the game <strong>Gold</strong> (19 reports) — multiple separate Linux/Proton users report it installs and launches "fine out of the box, no tinkering," with EAC authenticating into multiplayer normally. Valve's own Deck Verified badge is still unrated ("Unknown") as of launch day — this is community-tested, not Valve-certified.</li>
+<li><strong>Independent corroboration:</strong> <a href="https://www.protondb.com/app/3079210" rel="nofollow">ProtonDB</a> rates the game <strong>Gold</strong> (34 reports as of Aug 17, up from 19 at launch) — multiple separate Linux/Proton users report it installs and launches "fine out of the box, no tinkering," with EAC authenticating into multiplayer normally on the live build. Valve's own Deck Verified badge is still unrated ("Unknown") as of Aug 17 — this is community-tested, not Valve-certified.</li>
 <li><strong>The anti-cheat is kernel-level Easy Anti-Cheat</strong>, and the developer did carry the Proton-enabled switch from beta into launch — the open question from Aug 8 (whether launch EAC config would match the beta) is now resolved: yes, it matches.</li>
 <li><strong>Performance complaints aren't Deck-exclusive.</strong> Separate Steam Discussion reports describe sub-60 FPS stutter on desktop Windows/Linux hardware too (e.g. an RX 9070 XT system reporting 29–42 FPS) — so the Deck's low framerate is likely general launch-day optimization, not a handheld-specific penalty.</li>
 </ul>
 
 <div class="note"><strong>If you're buying primarily for Deck:</strong> it will run, but expect sub-30 FPS at the lowest settings — treat it as a "docked to a TV" or Steam Machine game rather than a handheld one for now. Steam refunds cover &lt;2h played within 14 days if that's a dealbreaker.</div>
 
+<h2>Known Linux issue: Epic account linking fails</h2>
+<p>One recurring Linux-specific problem shows up across multiple independent <a href="https://www.protondb.com/app/3079210" rel="nofollow">ProtonDB reports</a> (from the beta through the live build): the game itself runs fine, but <strong>linking your Epic account for cross-platform progression fails</strong> — the EOS overlay reports "Title was not launched correctly" or the Epic sign-in silently loops. At least three separate reporters describe the same symptom; it does not affect joining servers, only Epic/EOS sign-in.</p>
+<p>One reporter (via ProtonDB, on the live build) traced it to EOS bootstrapper environment variables being lost through the EAC spawn chain under Proton, and posted launch-option env vars (<code>EOS_SESSION_STARTUPINFO</code>/<code>EOS_SESSION_GUID</code>) that fixed sign-in for them on two Proton versions. That's a <em>single unconfirmed workaround</em>, not a Team17-confirmed fix — if you try it, you're beta-testing someone else's theory. If Epic linking isn't critical for you, skipping the Epic login entirely is the low-effort route (one reporter: "with skipping Epic login, works perfectly").</p>
+
 <h2>Still open</h2>
 <ul>
-<li>No official Valve "Deck Verified" rating yet — badge status is "Unknown" as of launch day.</li>
+<li>No official Valve "Deck Verified" rating yet — badge status is still "Unknown" as of Aug 17.</li>
 <li>No developer statement confirming Deck support was an intentional launch target (it works, but appears untuned for it).</li>
+<li>A live-build ProtonDB report describes microphone input not being captured on Linux (game detects the mic, VOIP sends nothing) — single report so far, unconfirmed; worth watching given the game's VOIP troubles on all platforms.</li>
 </ul>
-<p class="stamp">Last verified Aug 14, 2026, ~01:30 UTC (launch day, ~9h post-unlock) — Steam Deck HQ hands-on (Aug 13) + ProtonDB aggregate reports (Gold, 19 reports) cross-checked.</p>
+<p class="stamp">Last verified Aug 17, 2026, ~08:20 UTC — ProtonDB re-checked (Gold, 34 reports; Deck Verified still Unknown); added the Linux Epic/EOS account-linking issue (3+ independent reports) with its single-source workaround labeled as such. Core verdict unchanged since the Aug 13 Steam Deck HQ hands-on + launch-day ProtonDB cross-check.</p>
 </main>
 <footer><div class="wrap">HLLVTools.com — unofficial Hell Let Loose: Vietnam tools &amp; answers. Not affiliated with Team17. Some links on this site are affiliate links — we may earn a commission at no extra cost to you. · <a href="/">Mortar calculator →</a></div></footer>
 </body>
