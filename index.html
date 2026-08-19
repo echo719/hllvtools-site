@@ -12,6 +12,21 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23e0a458' stroke-width='7'/><path d='M50 8v22M50 70v22M8 50h22M70 50h22' stroke='%237d9b4e' stroke-width='8' stroke-linecap='round'/></svg>">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY7H7WHS2Q"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-ZY7H7WHS2Q");</script>
+<!-- seo:begin (scripts/enhance_seo.py — 自动生成，勿手改；改脚本后重跑) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hllvtools.com/">
+<meta property="og:site_name" content="HLLVTools">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hllvtools.com/assets/img/og-default-v1.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HLLVTools mortar and artillery calculator for Hell Let Loose: Vietnam — range, azimuth and elevation readout">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HLLV Mortar &amp; Artillery Calculator — Hell Let Loose: Vietnam">
+<meta name="twitter:description" content="Free mortar and artillery calculator for Hell Let Loose: Vietnam. Grid-to-grid range and azimuth instantly; US mortar elevation sourced from the game&#x27;s own chart.">
+<meta name="twitter:image" content="https://hllvtools.com/assets/img/og-default-v1.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hllvtools.com/#org","name":"HLLVTools","url":"https://hllvtools.com/","description":"Independent fan project publishing tools and sourced answers for Hell Let Loose: Vietnam. Not affiliated with Team17 or Expression Games."},{"@type":"WebSite","@id":"https://hllvtools.com/#website","url":"https://hllvtools.com/","name":"HLLVTools","inLanguage":"en","publisher":{"@id":"https://hllvtools.com/#org"}},{"@type":"BreadcrumbList","@id":"https://hllvtools.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"HLLVTools","item":"https://hllvtools.com/"}]},{"@type":"WebApplication","@id":"https://hllvtools.com/#calculator","name":"HLLV Mortar & Artillery Calculator","url":"https://hllvtools.com/","applicationCategory":"UtilitiesApplication","applicationSubCategory":"Game tool","operatingSystem":"Any (runs in a web browser)","browserRequirements":"Requires JavaScript. Works offline once loaded.","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://hllvtools.com/#org"},"about":{"@id":"https://hllvtools.com/#game"},"featureList":["Grid-reference to grid-reference range in metres","Azimuth in degrees and NATO mils","US mortar elevation from the in-game tutorial elevation chart","Three-level keypad grid parsing (200 m / 66.7 m / 22.2 m)","Never extrapolates outside the calibrated sample band"],"dateModified":"2026-08-19T04:13:38Z"},{"@type":"VideoGame","@id":"https://hllvtools.com/#game","name":"Hell Let Loose: Vietnam","gamePlatform":["PC","PlayStation 5","Xbox Series X|S"],"publisher":{"@type":"Organization","name":"Team17"},"author":{"@type":"Organization","name":"Expression Games"}}]}</script>
+<!-- seo:end -->
 </head>
 <body>
 <header class="site"><div class="wrap bar">
@@ -25,11 +40,13 @@
 
 <div class="calc">
 <div class="calc-grid">
-<div class="fld"><label for="gFrom">Gun position</label><input id="gFrom" placeholder="E5-3-7" autocomplete="off" spellcheck="false" inputmode="text"></div>
-<div class="fld"><label for="gTo">Target grid</label><input id="gTo" placeholder="F7-1-5" autocomplete="off" spellcheck="false" inputmode="text"></div>
+<div class="fld"><label for="gFrom">Gun position</label><input id="gFrom" placeholder="E5-3-7" autocomplete="off" spellcheck="false" inputmode="text" aria-describedby="gridHelp"></div>
+<div class="fld"><label for="gTo">Target grid</label><input id="gTo" placeholder="F7-1-5" autocomplete="off" spellcheck="false" inputmode="text" aria-describedby="gridHelp"></div>
 </div>
+<p class="hint" id="gridHelp">Read it straight off the map. <code>E5</code> is the big square; each extra keypad digit narrows it by a third — <code>E5-3</code> is the north-east ninth, <code>E5-3-7</code> the south-west cell inside that. Keypad digits are optional, and the result updates as you type.</p>
 <div class="row">
 <button class="go" id="calcBtn">Compute</button>
+<button class="ghost" id="demoBtn" type="button">Try an example</button>
 <label class="src" for="sq">Grid square <select id="sq"><option value="200" selected>200 m — HLL series standard</option><option value="100">100 m</option><option value="250">250 m</option></select></label>
 <label class="src" for="shell" id="shellWrap" hidden>Shell <select id="shell"></select></label>
 </div>
@@ -39,10 +56,10 @@
 <div class="ro wide"><div class="k">Elevation</div><div class="v" id="elev">—</div></div>
 </div>
 <p class="stamp" id="calStamp" hidden></p>
-<p class="stamp">Keypads use the phone layout (1 = NW … 9 = SE). Square size defaults to the 200 m Hell Let Loose convention; Vietnam's exact grid gets verified at launch and updated here.</p>
+<p class="stamp">Keypads use the phone layout (1 = NW … 9 = SE). Square size defaults to the 200 m Hell Let Loose convention. Vietnam's exact grid square is still <strong>unverified</strong> as of Aug 19 — we haven't found a two-source measurement from the live build, so the selector stays manual rather than us quietly asserting a number. If your map reads differently, switch it above and tell us.</p>
 </div>
 
-<div class="note"><strong>US mortar elevation: live, sourced from the game's own tutorial.</strong> Vietnam's mortar ballistics weren't publicly documented before release, so instead of guessing we read the numbers straight off the in-game elevation guide shown during Mortar Training — confirmed byte-identical across two independent video captures (different creators, May 29 &amp; 30). That table hasn't yet been independently reconfirmed against the live Aug 13 build — no community range data has surfaced since unlock — so treat it as a strong seed, not gospel, until it's cross-checked. NVA mortar is still <strong>uncalibrated</strong>. <strong>Played mortar? <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2G7h0Gl9RJ2ZuUYbs4qU_Ut5xyfkWdvJmdkQqnAzHvJ9m0w/viewform" rel="nofollow noopener" target="_blank">Submit your range readings</a></strong> — shell, distance, elevation and a screenshot are all it takes; every accepted sample is credited and published. <a href="#method">How we do it →</a></div>
+<div class="note"><strong>US mortar elevation: live, sourced from the game's own tutorial.</strong> Vietnam's mortar ballistics weren't publicly documented before release, so instead of guessing we read the numbers straight off the in-game elevation guide shown during Mortar Training — confirmed byte-identical across two independent video captures (different creators, May 29 &amp; 30). That table hasn't been <em>fully</em> re-verified against the live Aug 13 build yet, but the first launch-build corroboration has arrived: a <a href="https://steamcommunity.com/app/3079210/discussions/1/631219091886229926/" rel="nofollow noopener" target="_blank">post-Hotfix-1 support thread</a> (Team17 staff replying) independently confirms the tutorial's 175&nbsp;m → 67° reading, and <a href="https://www.youtube.com/watch?v=VUI9sQxKNSs" rel="nofollow noopener" target="_blank">launch-build Aimer Seat footage</a> shows 225&nbsp;m → 55.3° in a real engagement — both matching this table. That's still short of our two-source bar for full re-verification, so treat it as a strong seed, not gospel. NVA mortar is still <strong>uncalibrated</strong>. <strong>Played mortar? <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2G7h0Gl9RJ2ZuUYbs4qU_Ut5xyfkWdvJmdkQqnAzHvJ9m0w/viewform" rel="nofollow noopener" target="_blank">Submit your range readings</a></strong> — shell, distance, elevation and a screenshot are all it takes; every accepted sample is credited and published. <a href="#method">How we do it →</a></div>
 
 <figure class="shot"><img src="/assets/img/us-mortar-elevation-hud-v1.jpg" width="1280" height="720" loading="lazy" alt="In-game US mortar Aimer Seat HUD showing the elevation guide table from 450 m at 0° down to 100 m at 85°, the source for this site's mortar calibration"><figcaption>The actual in-game table we read, not a fitted curve — Aimer Seat HUD, Mortar Training tutorial (beta build). Screenshot: <a href="https://www.youtube.com/watch?v=I9Z-txgoZio" rel="nofollow noopener" target="_blank">SmithersCast</a>, cross-confirmed byte-identical in a second, independent capture.</figcaption></figure>
 
@@ -89,7 +106,7 @@ function elevationFor(d,samples){
  return p[p.length-1][1];
 }
 const $=id=>document.getElementById(id);
-let BAL=null;
+let BAL=null,lastSent="";
 function currentShell(){
  if(!BAL||BAL.status!=="calibrated"||!BAL.shells.length)return null;
  return BAL.shells.find(s=>s.key===$("shell").value)||BAL.shells[0];
@@ -103,26 +120,39 @@ function applyTable(t){
  sel.addEventListener("change",()=>{if(!$("out").hidden)run();});
  if(t.grid_square_verified&&t.grid_square_m)$("sq").value=String(t.grid_square_m);
 }
-function run(){
+// GA4 只在"输入组合真的变了"时上报一次，边打字边算不会把 calc_use 灌水。
+// result/source 参数是为了在 GA4 里分开看：到底是没人用，还是用了但格式填错、
+// 或者算出来落在标定区间外——2026-08-18 的 28 天 calc_use=1 无法区分这三种。
+function track(result,source){
+ const key=source+"|"+result+"|"+$("gFrom").value+"|"+$("gTo").value+"|"+$("sq").value;
+ if(key===lastSent)return;
+ lastSent=key;
+ if(window.gtag)gtag('event','calc_use',{result:result,source:source});
+}
+function run(source){
+ source=source||"button";
  const A=parseGrid($("gFrom").value),B=parseGrid($("gTo").value),out=$("out");
  out.hidden=false;out.classList.remove("err");
  if(!A||!B){$("dist").parentElement.parentElement.classList.add("err");
   $("dist").textContent="—";$("azi").textContent="—";
   $("elev").textContent="Check the grid format — e.g. E5-3-7";
-  $("calStamp").hidden=true;return;}
+  $("calStamp").hidden=true;track("invalid_grid",source);return;}
+ $("dist").parentElement.parentElement.classList.remove("err");
  const sq=parseFloat($("sq").value),r=calc(A,B,sq);
  $("dist").innerHTML=Math.round(r.dist)+' <small>m</small>';
  $("azi").innerHTML=r.deg.toFixed(1)+'° <small>/ '+Math.round(r.mils)+' mils</small>';
  const sh=currentShell();
  if(!sh){
   $("elev").textContent="Calibrating — collecting community range data since the Aug 13 launch";
-  $("calStamp").hidden=true;
+  $("calStamp").hidden=true;track("uncalibrated",source);
  }else{
   const mil=elevationFor(r.dist,sh.samples);
   if(mil===null){
    $("elev").innerHTML='Out of calibrated range <small>('+Math.round(sh.range_m[0])+'–'+Math.round(sh.range_m[1])+' m)</small>';
+   track("out_of_range",source);
   }else{
    $("elev").innerHTML=(Math.round(mil*10)/10)+' <small>°</small>';
+   track("ok",source);
   }
   $("calStamp").textContent=sh.label+": "+sh.sample_count+" measured samples, "
    +Math.round(sh.range_m[0])+"–"+Math.round(sh.range_m[1])+" m, calibrated "
@@ -130,12 +160,33 @@ function run(){
    +". Between samples we interpolate linearly; we never extrapolate past the ends.";
   $("calStamp").hidden=false;
  }
- if(window.gtag)gtag('event','calc_use');
 }
-fetch("/ballistics.json",{cache:"no-cache"})
- .then(r=>r.ok?r.json():null).then(applyTable).catch(()=>{});
-$("calcBtn").addEventListener("click",run);
-["gFrom","gTo"].forEach(id=>$(id).addEventListener("keydown",e=>{if(e.key==="Enter")run();}));
+$("calcBtn").addEventListener("click",()=>run("button"));
+["gFrom","gTo"].forEach(id=>$(id).addEventListener("keydown",e=>{if(e.key==="Enter")run("enter");}));
+// 边打字边算：两个格子都解析得出来才算，避免打到一半就弹红色报错吓退新用户。
+let typeTimer;
+["gFrom","gTo"].forEach(id=>$(id).addEventListener("input",()=>{
+ clearTimeout(typeTimer);
+ typeTimer=setTimeout(()=>{
+  if(parseGrid($("gFrom").value)&&parseGrid($("gTo").value))run("auto");
+ },400);
+}));
+$("sq").addEventListener("change",()=>{if(!$("out").hidden)run("auto");});
+// 演示按钮：占位符里的那对坐标本身就是一次真实计算（388 m / 166.8° / 14.9°），
+// 一键填好并算出来，省掉"我该往里填什么"这一步。
+$("demoBtn").addEventListener("click",()=>{
+ $("gFrom").value="E5-3-7";$("gTo").value="F7-1-5";
+ run("demo");
+ $("out").scrollIntoView({block:"nearest",behavior:"smooth"});
+});
+// 弹道表的加载放在最后：这一句之前是写在所有 addEventListener 前面的，
+// 一旦 fetch 不可用或抛异常（老浏览器、隐私模式拦截），整段脚本会在这里断掉，
+// 连"按按钮能算距离"这个不依赖弹道表的核心功能都一起没了。
+// 现在按钮先接上，表加载失败最多是没有仰角，距离和方位角照常工作。
+try{
+ fetch("/ballistics.json",{cache:"no-cache"})
+  .then(r=>r.ok?r.json():null).then(applyTable).catch(()=>{});
+}catch(e){}
 </script>
 </body>
 </html>
