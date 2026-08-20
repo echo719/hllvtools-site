@@ -147,6 +147,12 @@ button.ghost::before{content:"▸";margin-right:7px;color:var(--olive)}
 /* 输入框下方的格式说明：新用户不知道该往格子里填什么，是转化流失的第一道坎。 */
 .hint{font-size:.86rem;color:var(--mut);margin:12px 0 0;line-height:1.6}
 .hint code{color:var(--amber2)}
+/* 开屏演示例的标记条：必须让人一眼看出这组读数不是他自己的输入算出来的。 */
+.demo-flag{
+  margin:18px 0 -8px;font:600 .7rem/1 var(--mono);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--olive2);display:flex;align-items:center;gap:8px;
+}
+.demo-flag::before{content:"◆";color:var(--amber)}
 .readout{
   display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:18px;
   background:var(--line2);border:1px solid var(--line2);border-radius:11px;overflow:hidden;

@@ -50,13 +50,14 @@
 <label class="src" for="sq">Grid square <select id="sq"><option value="200" selected>200 m — HLL series standard</option><option value="100">100 m</option><option value="250">250 m</option></select></label>
 <label class="src" for="shell" id="shellWrap" hidden>Shell <select id="shell"></select></label>
 </div>
+<p class="demo-flag" id="demoFlag" hidden>Worked example — overwrite either grid with your own</p>
 <div class="readout" id="out" hidden>
 <div class="ro"><div class="k">Range</div><div class="v" id="dist">—</div></div>
 <div class="ro"><div class="k">Azimuth</div><div class="v" id="azi">—</div></div>
 <div class="ro wide"><div class="k">Elevation</div><div class="v" id="elev">—</div></div>
 </div>
 <p class="stamp" id="calStamp" hidden></p>
-<p class="stamp">Keypads use the phone layout (1 = NW … 9 = SE). Square size defaults to the 200 m Hell Let Loose convention. Vietnam's exact grid square is still <strong>unverified</strong> as of Aug 19 — we haven't found a two-source measurement from the live build, so the selector stays manual rather than us quietly asserting a number. If your map reads differently, switch it above and tell us.</p>
+<p class="stamp">Keypads use the phone layout (1 = NW … 9 = SE). Square size defaults to the 200 m Hell Let Loose convention. Vietnam's exact grid square is still <strong>unverified</strong> as of Aug 20 — we haven't found a two-source measurement from the live build, so the selector stays manual rather than us quietly asserting a number. If your map reads differently, switch it above and tell us.</p>
 </div>
 
 <div class="note"><strong>US mortar elevation: live, sourced from the game's own tutorial.</strong> Vietnam's mortar ballistics weren't publicly documented before release, so instead of guessing we read the numbers straight off the in-game elevation guide shown during Mortar Training — confirmed byte-identical across two independent video captures (different creators, May 29 &amp; 30). That table hasn't been <em>fully</em> re-verified against the live Aug 13 build yet, but the first launch-build corroboration has arrived: a <a href="https://steamcommunity.com/app/3079210/discussions/1/631219091886229926/" rel="nofollow noopener" target="_blank">post-Hotfix-1 support thread</a> (Team17 staff replying) independently confirms the tutorial's 175&nbsp;m → 67° reading, and <a href="https://www.youtube.com/watch?v=VUI9sQxKNSs" rel="nofollow noopener" target="_blank">launch-build Aimer Seat footage</a> shows 225&nbsp;m → 55.3° in a real engagement — both matching this table. That's still short of our two-source bar for full re-verification, so treat it as a strong seed, not gospel. NVA mortar is still <strong>uncalibrated</strong>. <strong>Played mortar? <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2G7h0Gl9RJ2ZuUYbs4qU_Ut5xyfkWdvJmdkQqnAzHvJ9m0w/viewform" rel="nofollow noopener" target="_blank">Submit your range readings</a></strong> — shell, distance, elevation and a screenshot are all it takes; every accepted sample is credited and published. <a href="#method">How we do it →</a></div>
@@ -124,6 +125,9 @@ function applyTable(t){
 // result/source 参数是为了在 GA4 里分开看：到底是没人用，还是用了但格式填错、
 // 或者算出来落在标定区间外——2026-08-18 的 28 天 calc_use=1 无法区分这三种。
 function track(result,source){
+ // autoload 是页面自己算的开屏示例，不是人的意图，绝不上报——否则 calc_use
+ // 会变成"访问量"的同义词，彻底失去衡量转化的意义。
+ if(source==="autoload")return;
  const key=source+"|"+result+"|"+$("gFrom").value+"|"+$("gTo").value+"|"+$("sq").value;
  if(key===lastSent)return;
  lastSent=key;
@@ -174,19 +178,34 @@ let typeTimer;
 $("sq").addEventListener("change",()=>{if(!$("out").hidden)run("auto");});
 // 演示按钮：占位符里的那对坐标本身就是一次真实计算（388 m / 166.8° / 14.9°），
 // 一键填好并算出来，省掉"我该往里填什么"这一步。
+const DEMO=["E5-3-7","F7-1-5"];
+function fillDemo(source){
+ $("gFrom").value=DEMO[0];$("gTo").value=DEMO[1];
+ run(source);
+ $("demoFlag").hidden=false;
+}
 $("demoBtn").addEventListener("click",()=>{
- $("gFrom").value="E5-3-7";$("gTo").value="F7-1-5";
- run("demo");
+ fillDemo("demo");
  $("out").scrollIntoView({block:"nearest",behavior:"smooth"});
 });
+// 用户一动输入框，示例标记就撤掉——之后显示的都是他自己的数。
+["gFrom","gTo"].forEach(id=>$(id).addEventListener("input",()=>{$("demoFlag").hidden=true;}));
 // 弹道表的加载放在最后：这一句之前是写在所有 addEventListener 前面的，
 // 一旦 fetch 不可用或抛异常（老浏览器、隐私模式拦截），整段脚本会在这里断掉，
 // 连"按按钮能算距离"这个不依赖弹道表的核心功能都一起没了。
 // 现在按钮先接上，表加载失败最多是没有仰角，距离和方位角照常工作。
+// 开屏就算一遍演示例：GA4 显示首页平均互动时长只有 5 秒，多数人根本没停留到
+// "看懂格式→填两个格子→点按钮"这一步。与其给两个空格子，不如第一眼就把
+// 输入-输出关系摆出来（明确标注是示例，用户一打字就撤掉标记）。
+// 注意这次计算不上报 calc_use，见 track()。
+function boot(t){
+ try{applyTable(t);}catch(e){}
+ try{if($("gFrom").value===""&&$("gTo").value==="")fillDemo("autoload");}catch(e){}
+}
 try{
  fetch("/ballistics.json",{cache:"no-cache"})
-  .then(r=>r.ok?r.json():null).then(applyTable).catch(()=>{});
-}catch(e){}
+  .then(r=>r.ok?r.json():null).then(boot).catch(()=>boot(null));
+}catch(e){boot(null);}
 </script>
 </body>
 </html>
